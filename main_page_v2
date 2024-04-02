@@ -123,6 +123,40 @@
       </button>
     </div>
 
+    <!-- Cards four 인기글 -->
+
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="https://image.ytn.co.kr/general/jpg/2014/1028/201410281805269374_t.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">신해철 마왕: 너 내 친구가 되라</h5>
+            <p class="card-text">
+              신해철은 새벽 2시 집에서 라이브 라디오 방송을 하던중 듣고 있는 사람은 집 불을 깜빡여 보라고 시켜서 서로의 존재를 확인하였다. 이에 신해철은 자신의 맞은 편 아파트에서 불이 깜빡이는 걸 확인하여 놀랐다고 한다.</p>
+            <p class="card-text"><small class="text-body-secondary">ㄴㄴ</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Cards four five of us -->
 <!-- 현현섭 -->
 <div class="col-md-4 mb-4"> <!-- 여기에 현현섭 추가 -->
