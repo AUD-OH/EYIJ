@@ -26,6 +26,7 @@
             border: 1px solid #97d5ff;
             border-radius: 20px;
             position: relative;
+            width: 250px;
         }
 
         .post-content {
