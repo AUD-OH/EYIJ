@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>인기 게시물 섹션</title>
+    <style>
+        .popular-posts {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .popular-posts h2 {
+            font-size: 24px;
+            color: #333;
+            width: 100%;
+        }
+
+        .post {
+            background-color: #97d5ff;
+            margin: 50px;
+            padding: 10px;
+            border: 1px solid #97d5ff;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .post-content {
+            margin-bottom: 200px;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+
+        }
+
+        .post-content img {
+            max-width: 100%;
+            max-height: 300px;
+            height: auto;
+            border-radius: 10px;
+
+        }
+
+
+        .more-button {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #ffffff;
+            border: 2px solid #97d5ff;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .more-button:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="popular-posts">
+        <h2>인기 게시물</h2>
+        <div class="post" id="post1">
+            <div class="post-content">
+                <img src="https://as1.ftcdn.net/v2/jpg/01/35/77/32/1000_F_135773235_1FDKLRmaC9P0pLwdcAg3GSdx9hTXKyYC.jpg"
+                    alt="인기 게시물1 미리보기">
+            </div>
+            <a href="#" class="more-button">더보기</a>
+        </div>
+        <div class="post" id="post2">
+            <div class="post-content">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ59DI3-ZFilIx0YdlHX3NUByJjgwiJSIPtA5b3zq6gs3WEtOqFToTxk2QaJb96Dei4ps&usqp=CAU"
+                    alt="인기 게시물2 미리보기">
+            </div>
+            <a href="#" class="more-button">더보기</a>
+        </div>
+        <div class="post" id="post3">
+            <div class="post-content">
+                <img src="https://www.naturephoto-cz.com/photos/birds/%EC%98%AC%EB%B9%BC%EB%AF%B8-162577.jpg"
+                    alt="인기 게시물3 미리보기">
+            </div>
+            <a href="#" class="more-button">더보기</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
