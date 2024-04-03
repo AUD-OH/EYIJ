@@ -1,229 +1,261 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EYIJ Team</title>
-    <link rel="stylesheet"
-        href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EYIJ Team</title>
+<link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <style>
+<style>
         body {
-            background-color: #FFFFFF;
-            /* 전체 페이지 배경색을 흰색으로 설정 */
-            color: #000000;
-            /* 기본 글씨색을 검정으로 설정 */
-        }
+                background-color: #ffffff; /* 전체 페이지 배경색을 흰색으로 설정 */
+                color: #000000; /* 기본 글씨색을 검정으로 설정 */
+                }
 
-        .hero {
-            background-color: #0B2C4C;
-            /* 어두운 배경색 설정 */
-            color: #FFFFFF;
-            /* 흰색 글씨색 설정 */
-            padding: 20px 0;
-            /* 패딩 추가 */
-            text-align: center;
-            /* 텍스트 가운데 정렬 */
-        }
+                .hero {
+                background-color: #0b2c4c; /* 어두운 배경색 설정 */
+                color: #ffffff; /* 흰색 글씨색 설정 */
+                padding: 20px 0; /* 패딩 추가 */
+                text-align: center; /* 텍스트 가운데 정렬 */
+                }
 
-        .navbar {
-            background-color: #FFFFFF;
-            /* Navbar 배경색을 흰색으로 설정 */
-        }
+                .navbar {
+                    background-color: #ffffff; /* Navbar 배경색을 흰색으로 설정 */
+                }
 
-        .row {
-            display: flex;
-            /* Display flex to make cards horizontal */
-            flex-wrap: wrap;
-            /* Allow wrapping of cards */
-            gap: 20px;
-            /* Space between cards */
-        }
+                .row {
+                display: flex; /* Display flex to make cards horizontal */
+                flex-wrap: wrap; /* Allow wrapping of cards */
+                gap: 20px; /* Space between cards */
+                }
+                .card {
+                flex: 1; /* Each card takes up equal space */
+                height: 100%; /* 부모 요소의 높이에 맞춤 */
+                border: none; /* 카드 테두리 제거 */
+                background-color: #f8f9fa; /* 옅은 회색 배경 */
+                transition: transform 0.3s ease; /* 부드러운 애니메이션 추가 */
+                }
+                .card-img-top {
+                max-height: 230px; /* 이미지 최대 높이 설정 */
+                object-fit: cover; /* 이미지 비율을 유지하면서 영역 채움 */
+                width: auto; /* 너비 자동 조절 */
+                height: auto; /* 높이 자동 조절 */
+                max-width: 100%; /* 최대 너비를 카드 너비에 맞춤 */
+                }
+                /* 추가한 스타일 */
+                .container-mt-5 {
+                margin-top: 30px; /* 원하는 여백 크기로 조절 */
+                }
 
-        .card {
-            flex: 1;
-            /* Each card takes up equal space */
-            height: 100%;
-            /* 부모 요소의 높이에 맞춤 */
-            border: none;
-            /* 카드 테두리 제거 */
-            background-color: #F8F9FA;
-            /* 옅은 회색 배경 */
-            transition: transform 0.3s ease;
-            /* 부드러운 애니메이션 추가 */
-        }
+                .card:hover {
+                transform: scale(1.09); /* 마우스를 올릴 때 카드가 약간 커지도록 설정 */
+                }
 
-        .card-img-top {
-            max-height: 230px;
-            /* 이미지 최대 높이 설정 */
-            object-fit: cover;
-            /* 이미지 비율을 유지하면서 영역 채움 */
-            width: auto;
-            /* 너비 자동 조절 */
-            height: auto;
-            /* 높이 자동 조절 */
-            max-width: 100%;
-            /* 최대 너비를 카드 너비에 맞춤 */
-        }
-
-        /* 추가한 스타일 */
-        .container-mt-5 {
-            margin-top: 30px;
-            /* 원하는 여백 크기로 조절 */
-        }
-
-        .card:hover {
-            transform: scale(1.09);
-            /* 마우스를 올릴 때 카드가 약간 커지도록 설정 */
-        }
-    </style>
+                .footer {
+                background-color: #0b2c4c; /* Footer 배경색을 어두운 색으로 설정 */
+                color: #ffffff; /* 흰색 글씨색 설정 */
+                text-align: center; /* 텍스트 가운데 정렬 */
+                padding: 20px 0; /* 상하 패딩 추가 */
+                }
+</style>
 </head>
 
 <body>
-    <nav class="navbar border-bottom border-bottom-dark d-flex justify-content-end" data-bs-theme="dark">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url_for('Team Intro') }}">Team
-                                Intro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">게시판</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">로그인/회원가입</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </nav>
-    <div class="hero">
-        <h1 class="text-white">EYIJ Team Introduction</h1>
-        <h2 class="text-white">AI 6기 14조
-            <h3 class="text-white">친해지는데 시간이 걸리는 스타일이에요</h3>
+<nav class="navbar border-bottom border-bottom-dark d-flex justify-content-end" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('Team Intro') }}">Team Intro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">게시판</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">로그인/회원가입</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="container mt-5">
-        <img src="https://kksoo0131.github.io/assets/img/thumbnail-image.png" class="img-fluid" alt="New Team Member"
-            style="width: 100%" />
-    </div>
-    <!-- Rest of the Cards -->
-    <!-- 현현섭 -->
-    <div class="col-md-4 mb-4"> <!-- 여기에 현현섭 추가 -->
-        <div class="card" style="width: 18rem;">
-            <img src="https://e1.pxfuel.com/desktop-wallpaper/321/342/desktop-wallpaper-crayon-shin-chan-doraemon-and-shinchan.jpg"
-                class="card-img-top" alt="현현섭">
-            <div class="card-body">
-                <h5 class="card-title">현현섭</h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    <span style="color: black;font-weight: bold;">INTP</span>
-                </h6>
-                <p class="card-text">
-                    현현섭현현섭현현섭
-                </p>
-                <a href="https://www.bang-olufsen.com/ko/kr/speakers/beosound-a1" class="btn btn-primary"
-                    target="_blank" rel="noopener noreferrer">
-                    github 주소 보기
-                </a>
-            </div>
-        </div>
-    </div>
-    <!--이훈희 -->
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="https://origami-database.com/wp-content/uploads/DSC03328-export-3000x3000.jpg"
-                class="card-img-top" alt="이훈희">
-            <div class="card-body">
-                <h5 class="card-title">이훈희</h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    <span style="color: black;font-weight: bold;">INTP</span>
-                </h6>
-                <p class="card-text">
-                    이훈희
-                </p>
-                <a href="https://github.com/hunhee92/hunhee92" class="btn btn-primary" target="_blank"
-                    rel="noopener noreferrer">
-                    github 주소 보기
-                </a>
-            </div>
-        </div>
-    </div>
-    <!--이경은 -->
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="https://origami-database.com/wp-content/uploads/DSC03328-export-3000x3000.jpg"
-                class="card-img-top" alt="이훈희">
-            <div class="card-body">
-                <h5 class="card-title">이경은</h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    <span style="color: black;font-weight: bold;">INTP</span>
-                </h6>
-                <p class="card-text">
-                    이경은
-                </p>
-                <a href="https://github.com/Yuancod" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    github 주소 보기
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- 황원욱 -->
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img src="https://origami-database.com/wp-content/uploads/DSC03329-export.jpg" class="card-img-top"
-                alt="황원욱">
-            <div class="card-body">
-                <h5 class="card-title">황원욱</h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    <span style="color: black;font-weight: bold;">ENTP</span>
-                </h6>
-                <p class="card-text">
-                    황원욱황원욱
-                </p>
-                <a href="https://github.com/hwangwonwook/hwangwonwook" class="btn btn-primary" target="_blank"
-                    rel="noopener noreferrer">
-                    github 주소 보기
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- 오규선 -->
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem">
-            <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg"
-                class="card-img-top" alt="오규선" />
-            <div class="card-body">
-                <h5 class="card-title">오규선</h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    <span style="color: black;font-weight: bold;">ENTJ</span>
-                </h6>
-                <p class="card-text">
-                    오규선오규선오규선
-                </p>
-                <a href="https://github.com/AUD-OH" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    github 주소 보기
-                </a>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-</body>
+  </nav>
+</nav>
 
-</html>
-<div class="container mt-5">
-    <div class="row">
+<!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">회원가입</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">이름</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">아이디</label>
+            <input type="text" class="form-control" id="username">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">비밀번호</label>
+            <input type="password" class="form-control" id="password">
+          </div>
+          <div class="mb-3">
+            <label for="nickname" class="form-label">별명</label>
+            <input type="text" class="form-control" id="nickname">
+          </div>
+          <button type="submit" class="btn btn-primary">저장</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<body>
+  <div class="hero #0b2c4c text-center py-5">
+  <h1 class="text-white">EYIJ Team Introduction</h1>
+  <h3 class="text-white"></h2> AI 전문가를 꿈꾸는 6기 14조 EYIJ 프로그램</h2>
+  </div>
+  <div class="container mt-5 container-mt-5">
+  <div class="row">
+
+
+
+
+    
+    <!-- carousel 그림 넣기 -->
+
+     <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://kksoo0131.github.io/assets/img/thumbnail-image.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://kksoo0131.github.io/assets/img/thumbnail-image.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://kksoo0131.github.io/assets/img/thumbnail-image.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Cards four 인기글 -->
+
+    <div class="card text-bg-dark">
+      <img src="https://image.ytn.co.kr/general/jpg/2014/1028/201410281805269374_t.jpg" class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <h5 class="card-title">신해철 마왕</h5>
+        <p class="card-text">신해철은 새벽 2시 집에서 라이브 라디오 방송을 하던중 듣고 있는 사람은 집 불을 깜빡여 보라고 시켜서 서로의 존재를 확인하였다. 이에 신해철은 자신의 맞은 편 아파트에서 불이 깜빡이는 걸 확인하여 놀랐다고 한다.</p>
+        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+    <div class="card text-bg-dark">
+      <img src="https://image.ytn.co.kr/general/jpg/2014/1028/201410281805269374_t.jpg" class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <h5 class="card-title">신해철 마왕</h5>
+        <p class="card-text">신해철은 새벽 2시 집에서 라이브 라디오 방송을 하던중 듣고 있는 사람은 집 불을 깜빡여 보라고 시켜서 서로의 존재를 확인하였다. 이에 신해철은 자신의 맞은 편 아파트에서 불이 깜빡이는 걸 확인하여 놀랐다고 한다.</p>
+        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+    <div class="card text-bg-dark">
+      <img src="https://image.ytn.co.kr/general/jpg/2014/1028/201410281805269374_t.jpg" class="card-img" alt="...">
+      <div class="card-img-overlay">
+        <h5 class="card-title">신해철 마왕</h5>
+        <p class="card-text">신해철은 새벽 2시 집에서 라이브 라디오 방송을 하던중 듣고 있는 사람은 집 불을 깜빡여 보라고 시켜서 서로의 존재를 확인하였다. 이에 신해철은 자신의 맞은 편 아파트에서 불이 깜빡이는 걸 확인하여 놀랐다고 한다.</p>
+        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+
+    
+
+  
+
+    <div class="container mt-5">
+      <div class="row justify-content-center"> <!-- 중앙 정렬 -->
+        <!-- 팀원 소개 1 -->
+        <div class="col-md-2">
+          <div class="card mb-3">
+            <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg" class="card-img-top rounded-circle" alt="팀원 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">원욱</h5>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 팀원 소개 2 -->
+        <div class="col-md-2">
+          <div class="card mb-3">
+            <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg" class="card-img-top rounded-circle" alt="팀원 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">훈희</h5>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 팀원 소개 3 -->
+        <div class="col-md-2">
+          <div class="card mb-3">
+            <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg" class="card-img-top rounded-circle" alt="팀원 3">
+            <div class="card-body text-center">
+              <h5 class="card-title">규선</h5>
+            </div>
+          </div>
+        </div>
+    
+        <!-- 팀원 소개 4 -->
+        <div class="col-md-2">
+          <div class="card mb-3">
+            <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg" class="card-img-top rounded-circle" alt="팀원 4">
+            <div class="card-body text-center">
+              <h5 class="card-title">현섭</h5>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 팀원 소개 5 -->
+        <div class="col-md-2">
+          <div class="card mb-3">
+            <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg" class="card-img-top rounded-circle" alt="팀원 5">
+            <div class="card-body text-center">
+              <h5 class="card-title">경은</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <footer class="footer">
+      AI 6기 14조 첫 프로젝트
+    </footer>
+    
