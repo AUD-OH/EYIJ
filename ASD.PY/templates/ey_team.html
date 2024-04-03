@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 소개 페이지</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ey_team_styles.css') }}"> <!-- 스타일 시트 파일 연결 -->
+    <!-- /* 전체 페이지 스타일링 */ -->
+    <style>
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 파란색 박스 스타일링 */
+        .blue-box {
+            background-color: #3498db;
+            /* 파란색 */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* 메인 소개글 스타일링 */
+        .main-introduction {
+            text-align: center;
+            color: #fff;
+            /* 흰색 텍스트 */
+        }
+
+        .image-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .image-card {
+            width: 18%;
+            margin-bottom: 20px;
+        }
+
+        .image-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* 네브바 */
+        body {
+            background-color: #ffffff;
+            /* 전체 페이지 배경색을 흰색으로 설정 */
+            color: #000000;
+            /* 기본 글씨색을 검정으로 설정 */
+        }
+
+        .hero {
+            background-color: #0b2c4c;
+            /* 어두운 배경색 설정 */
+            color: #ffffff;
+            /* 흰색 글씨색 설정 */
+            padding: 20px 0;
+            /* 패딩 추가 */
+            text-align: center;
+            /* 텍스트 가운데 정렬 */
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            /* Navbar 배경색을 흰색으로 설정 */
+        }
+
+        .row {
+            display: flex;
+            /* Display flex to make cards horizontal */
+            flex-wrap: wrap;
+            /* Allow wrapping of cards */
+            gap: 20px;
+            /* Space between cards */
+        }
+
+        .card {
+            flex: 1;
+            /* Each card takes up equal space */
+            height: 100%;
+            /* 부모 요소의 높이에 맞춤 */
+            border: none;
+            /* 카드 테두리 제거 */
+            background-color: #f8f9fa;
+            /* 옅은 회색 배경 */
+            transition: transform 0.3s ease;
+            /* 부드러운 애니메이션 추가 */
+        }
+
+        .card-img-top {
+            max-height: 230px;
+            /* 이미지 최대 높이 설정 */
+            object-fit: cover;
+            /* 이미지 비율을 유지하면서 영역 채움 */
+            width: auto;
+            /* 너비 자동 조절 */
+            height: auto;
+            /* 높이 자동 조절 */
+            max-width: 100%;
+            /* 최대 너비를 카드 너비에 맞춤 */
+        }
+
+        /* 추가한 스타일 */
+        .container-mt-5 {
+            margin-top: 30px;
+            /* 원하는 여백 크기로 조절 */
+        }
+
+        .card:hover {
+            transform: scale(1.09);
+            /* 마우스를 올릴 때 카드가 약간 커지도록 설정 */
+        }
+    </style>
+
+    <script>
+        // 모달 열기
+        function openModal(imageUrl, captionText) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImage");
+            var caption = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = imageUrl;
+            caption.innerHTML = captionText;
+        }
+
+        // 모달 닫기
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar border-bottom border-bottom-dark d-flex justify-content-end" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/ey_team">Team
+                                Intro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/ey_post">게시판</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/ey_login">로그인/회원가입</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </nav>
+    <div class="container">
+        <!-- 파란색 박스 -->
+        <div class="blue-box">
+            <!-- 메인 소개글 -->
+            <div class="main-introduction">
+                <h1>팀 이름 : 의욕없조<br>프로젝트 이름 : 의욕있조?</h1>
+                <p>팀 소개 : 2024년 스파르타 내일배움캠프 8주차 14조로 모인 5명의 의욕 창출 프로젝트</p>
+            </div>
+        </div>
+
+
+
+        <!-- 이미지 그리드 -->
+        <div class="image-grid">
+            <!-- 이미지 카드 1 -->
+            <div class="image-card">
+                <img src="https://tattoo170829.wisacdn.com/data/files/tattoo_posting/2021/06/3743828237_60c33d3f4049f.png" alt="멤버 1" onclick="openModal('member1.jpg', '멤버 1: 오규선')">>
+                <p>오규선</p>
+            </div>
+
+            <!-- 이미지 카드 2 -->
+            <div class="image-card">
+                <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg" alt="멤버 2"
+                    onclick="openModal('member2.jpg', '멤버 2: 이경은')">
+                <p>이경은</p>
+            </div>
+
+            <!-- 이미지 카드 3 -->
+            <div class="image-card">
+                <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg" alt="멤버 3"
+                    onclick="openModal('member3.jpg', '멤버 3: 이훈희')">
+                <p>이훈희</p>
+            </div>
+
+            <!-- 이미지 카드 4 -->
+            <div class="image-card">
+                <img src="https://origami-database.com/wp-content/uploads/DSC01032-export-3000x3000.jpg" alt="멤버 4"
+                    onclick="openModal('member4.jpg', '멤버 4: 현현섭')">
+                <p>현현섭</p>
+            </div>
+
+            <!-- 이미지 카드 5 -->
+            <div class="image-card">
+                <img src="member5.jpg" alt="멤버 5" onclick="openModal('member5.jpg', '멤버 5: 황원욱')">
+                <p>황원욱</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 모달 -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption" class="caption"></div>
+    </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='ey_team_script.js') }}"></script> <!--자바스크립트 파일 연결-->
+
+</body>
+
+</html>
