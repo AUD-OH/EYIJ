@@ -5,7 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>글쓰기</title>
-    <link rel="stylesheet" href="style.css"> <!-- 필요하다면 CSS 파일 연결 -->
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            /* 입력 필드의 패딩을 너비에 포함 */
+        }
+
+        .write-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 20px auto;
+            width: fit-content;
+        }
+
+        .write-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>

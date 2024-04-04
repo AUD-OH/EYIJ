@@ -107,6 +107,27 @@ def popular_posts():
     post_list = Podb.query.all()
     return render_template('popular_post_user.html', data=post_list)
 
+# 게시물 수정
+
+
+@app.route('/update-post/<int:post_id>', methods=['POST'])
+def update_post(post_id):
+    post = Podb.query.get_or_404(post_id)
+    post.pt = request.form['postTitle']
+    post.ct = request.form['postContent']
+    db.session.commit()
+    return redirect(url_for('popular_posts'))
+
+# 게시물 삭제
+
+
+@app.route('/delete_post/<int:post_id>', methods=['POST'])
+def delete_post(post_id):
+    post = Podb.query.get_or_404(post_id)
+    db.session.delete(post)
+    db.session.commit()
+    return redirect(url_for('popular_posts'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
