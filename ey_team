@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>팀 소개</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='ey_team_styles.css') }}"> <!-- 스타일 시트 파일 연결 -->
+</head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<body>
+  
+    <div class="container">
+        <!-- 파란색 박스 -->
+        <div class="blue-box">
+          <!-- 메인 소개글 -->
+          <div class="main-introduction">
+            <h1>팀 이름 : 의욕없조<br>프로젝트 이름 : 의욕있조?</h1>
+            <p>팀 소개 : 2024년 스파르타 내일배움캠프 8주차 14조로 모인 5명의 의욕 창출 프로젝트</p>
+          </div>
+        </div>
+      
+
+  <!-- 이미지 그리드 -->
+  <div class="image-grid">
+    <!-- 이미지 카드 1 -->
+    <div class="image-card">
+      <img src="{{ url_for('static', filename='image/bichon02.png') }}" alt="멤버 1" data-toggle="modal" data-target="#member1Modal">
+      <p>오규선</p>
+    </div>
+
+    <!-- 이미지 카드 2 -->
+    <div class="image-card">
+      <img src="{{ url_for('static', filename='image/frenh03.png') }}" alt="멤버 2" data-toggle="modal" data-target="#member2Modal">
+      <p>이경은</p>
+    </div>
+
+    <!-- 이미지 카드 3 -->
+    <div class="image-card">
+      <img src="{{ url_for('static', filename='image/gimhae.png') }}" alt="멤버 3" data-toggle="modal" data-target="#member3Modal">
+      <p>이훈희</p>
+    </div>
+
+    <!-- 이미지 카드 4 -->
+    <div class="image-card">
+      <img src="{{ url_for('static', filename='image/hanla.png') }}" alt="멤버 4" data-toggle="modal" data-target="#member4Modal">
+      <p>현현섭</p>
+    </div>
+
+    <!-- 이미지 카드 5 -->
+    <div class="image-card">
+      <img src="{{ url_for('static', filename='image/welsh02.png') }}" alt="멤버 5" data-toggle="modal" data-target="#member5Modal">
+      <p>황원욱</p>
+    </div>
+  </div>
+</div>
+
+<!-- 오규선님 모달 -->
+<div class="modal fade" id="member1Modal" tabindex="-1" aria-labelledby="member1ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-img-header">
+          <img src="{{ url_for('static', filename='image/bichon02.png') }}" alt="멤버 1">
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">이번 프로젝트 역할</label>
+          <div>
+            가나다라
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">한마디</label>
+            <div>
+              abc
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 이경은님 모달 -->
+<div class="modal fade" id="member2Modal" tabindex="-1" aria-labelledby="member2ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-img-header">
+          <img src="{{ url_for('static', filename='image/frenh03.png') }}" alt="멤버 2">
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">이번 프로젝트 역할</label>
+          <div>
+            가나다라
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">한마디</label>
+            <div>
+              abc
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 이훈희님 모달 -->
+<div class="modal fade" id="member3Modal" tabindex="-1" aria-labelledby="member3ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-img-header">
+          <img src="{{ url_for('static', filename='image/gimhae.png') }}" alt="멤버 3">
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">이번 프로젝트 역할</label>
+          <div>
+            가나다라
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">한마디</label>
+            <div>
+              abc
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 현현섭님 모달 -->
+<div class="modal fade" id="member4Modal" tabindex="-1" aria-labelledby="member4ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-img-header">
+          <img src="{{ url_for('static', filename='image/hanla.png') }}" alt="멤버 4">
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">이번 프로젝트 역할</label>
+          <div>
+            가나다라
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">한마디</label>
+            <div>
+              abc
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 황원욱님 모달 -->
+<div class="modal fade" id="member5Modal" tabindex="-1" aria-labelledby="member5ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-img-header">
+          <img src="{{ url_for('static', filename='image/welsh02.png') }}" alt="멤버 5"> 
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">이번 프로젝트 역할</label>
+          <div>
+            가나다라
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">한마디</label>
+            <div>
+              abc
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
