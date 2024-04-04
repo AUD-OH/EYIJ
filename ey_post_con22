@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .board {
+            margin-top: 20px;
+        }
+
+        .board-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .board-list li {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .board-list a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* 게시글 css */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .post-container {
+            margin: 20px;
+        }
+
+        .post-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .post-content {
+            margin-top: 10px;
+        }
+
+        .comments-section {
+            margin-top: 20px;
+        }
+
+        .comment {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .comment-input {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+        }
+
+        .like_b {
+            margin-top: 10px;
+        }
+
+        /* 게시글 css 끝  */
+        /* 댓글 창 css */
+        .comment {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .del_b {
+            margin-left: 7px;
+        }
+
+        /* 댓글창 css 끝 */
+        /* 댓글입력 css */
+        .com_t {
+            margin-top: 20px;
+            width: 100%;
+            height: 50px;
+        }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar_logo"></div>
+        <ul class="navbar_menu">
+            <a href="#">팀원소개</a>
+            <a href="ey_team">Team 소개</a>
+            <a href="ey_post">게시판</a>
+            <a href="#">로그인</a>
+        </ul>
+    </nav>
+    <div class="post-container">
+        <div class="post-title">게시글 제목</div>
+        <div class="post-content">
+            게
+            시
+            글
+            내
+            용
+            냠
+            냠
+        </div>
+        <div><button class="like_b">좋아요</button></div>
+        <!-- 댓글 -->
+        <div class="comments-section">
+
+            {% for com_t in data %}
+            <div>작성자</div>
+            <div class="comment">{{com_t.u_coment}}
+                <div>
+                    <form action="coment_edit/{{com_t.id}}" method="post">
+                        <button type="button" name="com_b" value="c_edit" data-toggle="modal" data-target="#editModal"
+                            data-id="{{com_t.id}}" data-con="{{com_t.u_coment}}">수정</button>
+                        <button type="submit" class="del_b" name='com_b'>삭제</button>
+                </div>
+                </form>
+            </div>
+
+            {% endfor %}
+            <form action="/coment_create"><textarea name="comment" placeholder="댓글을 입력하세요..." class="com_t"></textarea>
+                <button type="submit">댓글 달기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 모달 창 -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">댓글 수정</h5>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editCommentForm" action="/coment_update">
+                        <!-- 댓글의 수정 버튼을 눌렀을때 프라이머리 키를 가져와서 저장할 안보이는 인풋 -->
+                        <input type="hidden" id="commentId" name="commentId" value="">
+                        <textarea class="form-control" id="commentContent" name="content"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                    <button type="submit" class="btn btn-primary" id="saveChanges">저장</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 댓글 수정 모달창 끝  -->
+    <script>
+        // 수정 댓글 안에서 data-id 로 저장한 프라이머리 키값을 모달창에 넣어주는 스크립트 
+        $(document).ready(function () {
+            $('#editModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // 수정 버튼
+                var commentId = button.data('id'); // data-id 속성에서 ID 추출
+                var contentId = button.data('con');
+                console.log(commentId)
+                var modal = $(this);
+                modal.find('#commentContent').val(contentId);
+                modal.find('#commentId').val(commentId) // 숨김 필드에 ID 설정
+            });
+
+            $('#saveChanges').click(function () {
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>
