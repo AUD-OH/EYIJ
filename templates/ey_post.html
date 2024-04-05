@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>의욕없조 게시물</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .post {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .post-title {
+            color: #333;
+            font-size: 24px;
+            margin: 0 0 10px;
+        }
+
+        .post-content {
+            color: #444;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .write-btn {
+            padding: 10px 20px;
+            /* 패딩 설정 */
+            font-size: 16px;
+            /* 글씨 크기 */
+            background-color: #007bff;
+            /* 배경 색상 */
+            color: white;
+            /* 글씨 색상 */
+            border: none;
+            /* 테두리 없음 */
+            border-radius: 5px;
+            /* 모서리 둥글게 */
+            cursor: pointer;
+            /* 마우스 오버 시 커서 변경 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* 그림자 효과 */
+            display: block;
+            /* 블록 레벨 요소로 만들기 */
+            margin: 20px auto;
+            /* 위아래 마진 20px, 좌우 마진 자동 */
+            width: fit-content;
+            /* 버튼 내용에 맞게 너비 조정 */
+        }
+
+        .write-btn:hover {
+            background-color: #0056b3;
+            /* 호버 시 배경 색상 변경 */
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    {% for post in data %}
+    <div class="post">
+        <h2 class="post-title">{{ post.pt }}</h2>
+        <p class="post-content">{{ post.ct }}</p>
+        <button id="editBtn{{post.id}}" class="btn btn-primary" data-toggle="modal" data-target="#editModal{{post.id}}"
+            type="button">수정하기</button>
+        <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" style="display: inline;">
+            <input type="submit" class="btn btn-danger" value="삭제하기" style="margin-left: 10px;">
+        </form>
+    </div>
+    <div class="modal fade" id="editModal{{post.id}}" tabindex="-1" role="dialog"
+        aria-labelledby="editModalLabel{{post.id}}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel{{post.id}}">글 수정하기</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ url_for('update_post', post_id=post.id) }}" method="POST">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="postTitle">제목</label>
+                            <input type="text" class="form-control" name="postTitle" value="{{ post.pt }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="postContent">내용</label>
+                            <textarea class="form-control" name="postContent" rows="3">{{ post.ct }}</textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button    type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                        <input type="submit" class="btn btn-primary" value="저장하기">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <a href="write-post" class="write-btn">글쓰기</a>
+
+</body>
+
+</html>
